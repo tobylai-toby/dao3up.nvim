@@ -1,1 +1,1 @@
-# dao3up.nvim
+# Dao3up.nvim
