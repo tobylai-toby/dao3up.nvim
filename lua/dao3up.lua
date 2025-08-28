@@ -1,6 +1,7 @@
 local M = {}
+local height=6
 local function run_command_in_terminal(command)
-    vim.cmd('botright 6split')
+    vim.cmd('botright '..height..'split')
 
     -- 直接在terminal命令中执行
     vim.cmd('terminal ' .. command)
@@ -17,6 +18,7 @@ end
 function M.setup(opts)
     opts=opts or {}
     local npx_cmd=opts.npx_cmd or "npx -y --registry=https://mirrors.cloud.tencent.com/npm/ "
+    height=opts.height or 6
     vim.api.nvim_create_user_command('UpLogin', function()
         run_command_in_terminal(npx_cmd.."dao3up@latest login")
     end, {})
