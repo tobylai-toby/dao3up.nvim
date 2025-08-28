@@ -1,6 +1,6 @@
 local M = {}
 local function run_command_in_terminal(command)
-    vim.cmd('botright 12split')
+    vim.cmd('botright 6split')
 
     -- 直接在terminal命令中执行
     vim.cmd('terminal ' .. command)
